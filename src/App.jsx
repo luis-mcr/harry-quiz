@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <>
-      <Quiz/>
+      <Quiz Gri={Gri} Sly={Sly} Huf={Huf} Rav={Rav} setGri={setGri} setSly={setSly} setHuf={setHuf} setRav={setRav}/>
     </>
   )
 }

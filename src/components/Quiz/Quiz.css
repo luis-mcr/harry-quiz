@@ -50,3 +50,8 @@
     margin: auto;
     font-size: 18px;
 }
+
+.selected {
+    background: #dffff2;
+    border-color: #00d397;
+}

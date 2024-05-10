@@ -34,7 +34,7 @@ const Quiz = () => {
     } else if (maxNumber === Sly) {
       return "¡Slytherin! Eres turbio, pero por lo menos vas de cara y, la verdad,... Mejor que te traicione un hijo de puta, que lo ves venir, y ya te esperas la decepción, que un griffindor... Como cierto viejo con barbas que va de colega pero te usa durante 7 películas para salvarse el culo. Pero claro, después el antiguo pretendiente de tu madres, que perece que te odia, en el fondo te está guardando las espaldas. ¿Quién es un hijo de puta al final de cuentas?";
     } else if (maxNumber === Huf) {
-      return "¡Hufflepuff! Y tú te creeías de griffindor. Ser un segundón no es nada malo, tu piensa que tu aportación más importante es no molestar. Vas a vivir más años porque vives tranquilo y sin un pesado con gafas con que casi te mata todo el tiempo porque quiere llamar la atención";
+      return "¡Hufflepuff! Y tú te creeías de griffindor. Ser un segundón no es nada malo, tu piensa que tu aportación más importante es no molestar. Vas a vivir más años porque vives tranquilo y sin un pesado con gafas con que casi te mata todo el tiempo porque quiere llamar la atención.";
     } else {
       return "¡Ravenclaw! Aunque te hayan dicho que es la casa de los empollones, que no te confundan... ¿De qué casa es el personaje más pedante de HP? Efectivamente, Griffindor. Esta es la casa de la gente inteligente, no pedante. Parece lo mismo, pero no lo es. Es verdad que a veces deberías echarle más huevos a la vida, pero bueno, eres top.";
     }

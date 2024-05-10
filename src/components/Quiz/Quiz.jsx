@@ -3,9 +3,14 @@ import "./Quiz.css";
 import { data } from "../../assets/data.js";
 import { funcionesPuntos } from "../../assets/points.js";
 
-const Quiz = ({ Gri, Sly, Huf, Rav, setGri, setRav, setSly, setHuf }) => {
-  let [index, setIndex] = useState(0);
-  const [question, setQuestion] = useState(data[index]);
+const Quiz = () => {
+  // Se hace referencia a las casas de Harry Potter
+  const [Gri, setGri] = useState(0);
+  const [Sly, setSly] = useState(0);
+  const [Huf, setHuf] = useState(0);
+  const [Rav, setRav] = useState(0);
+
+  const [index, setIndex] = useState(0);
   const [lock, setLock] = useState(false);
   const [result, setResult] = useState(false);
 
@@ -15,8 +20,7 @@ const Quiz = ({ Gri, Sly, Huf, Rav, setGri, setRav, setSly, setHuf }) => {
         setResult(true);
         return 0;
       }
-      setIndex(++index);
-      setQuestion(data[index]);
+      setIndex((prevIndex) => prevIndex + 1);
       deselectOption();
       setLock(false);
     }
@@ -28,7 +32,7 @@ const Quiz = ({ Gri, Sly, Huf, Rav, setGri, setRav, setSly, setHuf }) => {
     if (maxNumber === Gri) {
       return "¡Gryffindor! Que sí pesado, que eres el protagonista. ¿Puedes hablar de algo que no sea ti mismo? Hay momentos en los que deberías pedir ayuda, porque casi matas a tus colegas por creerte invencible. ¡Personaje! Qué pereza...";
     } else if (maxNumber === Sly) {
-      return "¡SlySlytherin! Eres turbio, pero por lo menos vas de cara y, la verdad,... Mejor que te traicione un hijo de puta, que lo ves venir, y ya te esperas la decepción, que un griffindor... Como cierto viejo con barbas que va de colega pero te usa durante 7 películas para salvarse el culo. Pero claro, después el antiguo pretendiente de tu madres, que perece que te odia, en el fondo te está guardando las espaldas. ¿Quién es un hijo de puta al final de cuentas?";
+      return "¡Slytherin! Eres turbio, pero por lo menos vas de cara y, la verdad,... Mejor que te traicione un hijo de puta, que lo ves venir, y ya te esperas la decepción, que un griffindor... Como cierto viejo con barbas que va de colega pero te usa durante 7 películas para salvarse el culo. Pero claro, después el antiguo pretendiente de tu madres, que perece que te odia, en el fondo te está guardando las espaldas. ¿Quién es un hijo de puta al final de cuentas?";
     } else if (maxNumber === Huf) {
       return "¡Hufflepuff! Y tú te creeías de griffindor. Ser un segundón no es nada malo, tu piensa que tu aportación más importante es no molestar. Vas a vivir más años porque vives tranquilo y sin un pesado con gafas con que casi te mata todo el tiempo porque quiere llamar la atención";
     } else {
@@ -62,7 +66,7 @@ const Quiz = ({ Gri, Sly, Huf, Rav, setGri, setRav, setSly, setHuf }) => {
       ) : (
         <>
           <h2>
-            {index + 1}. {question.question}
+            {index + 1}. {data[index].question}
           </h2>
           <ul>
             <li
@@ -79,7 +83,7 @@ const Quiz = ({ Gri, Sly, Huf, Rav, setGri, setRav, setSly, setHuf }) => {
                 );
               }}
             >
-              {question.option1}
+              {data[index].option1}
             </li>
             <li
               onClick={(e) => {
@@ -95,7 +99,7 @@ const Quiz = ({ Gri, Sly, Huf, Rav, setGri, setRav, setSly, setHuf }) => {
                 );
               }}
             >
-              {question.option2}
+              {data[index].option2}
             </li>
             <li
               onClick={(e) => {
@@ -111,7 +115,7 @@ const Quiz = ({ Gri, Sly, Huf, Rav, setGri, setRav, setSly, setHuf }) => {
                 );
               }}
             >
-              {question.option3}
+              {data[index].option3}
             </li>
             <li
               onClick={(e) => {
@@ -127,10 +131,10 @@ const Quiz = ({ Gri, Sly, Huf, Rav, setGri, setRav, setSly, setHuf }) => {
                 );
               }}
             >
-              {question.option4}
+              {data[index].option4}
             </li>
           </ul>
-          <button onClick={next}>Next</button>
+          {lock && <button onClick={next}>Next</button>}
           <div className="index">
             Pregunta {index + 1} de {data.length}
           </div>

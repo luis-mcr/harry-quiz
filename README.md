@@ -19,8 +19,8 @@ Este proyecto está creado con Vite. Usando la opción React (JavaScript) + SWC.
 
 Versión 📋
 
-V 1.4 - 
-Incluye estilos para dispositivos pequeños.
+V 1.5 - 
+Incluye estilos para dispositivos pequeños y el mensaje de contacto debajo del Quiz.
 
 A partir de la V1.0 son todas versiones funcionales del proyecto.
 

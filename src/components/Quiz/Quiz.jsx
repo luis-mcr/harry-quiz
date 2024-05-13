@@ -1,19 +1,39 @@
 import React, { useState } from "react";
 import "./Quiz.css";
 import { data } from "../../assets/data.js";
-import { funcionesPuntos } from "../../assets/points.js";
+import { distributePoints } from "../../assets/functions/distributePoints.js";
 
 const Quiz = () => {
-  // Se hace referencia a las casas de Harry Potter
+  // ESTADOS con los PUNTOS de las casas de Harry Potter
   const [Gri, setGri] = useState(0);
   const [Sly, setSly] = useState(0);
   const [Huf, setHuf] = useState(0);
   const [Rav, setRav] = useState(0);
 
   const [index, setIndex] = useState(0);
+
+  // Se hace true al seleccionar una respuesta e impide que se puedan seleccionar más
   const [lock, setLock] = useState(false);
+
+  //Se hace true cuando llega a la última pregunta y hace renderiza la respuesta
   const [result, setResult] = useState(false);
 
+  //Cambia el color de la opción seleccionada
+  const changeColor = (e) => {
+    if (lock === false) {
+      e.target.classList.add("selected");
+    }
+  };
+
+  //Quita el color de la opción seleccionada
+  const deselectOption = () => {
+    const selectedOption = document.querySelector(".selected");
+    if (selectedOption) {
+      selectedOption.classList.remove("selected");
+    }
+  };
+
+  // Se ejecuta cuando se pulsa el botón Next
   const next = () => {
     if (lock === true) {
       if (index + 1 === data.length) {
@@ -40,21 +60,6 @@ const Quiz = () => {
     }
   };
 
-  //Cambia el color de la opción seleccionada
-  const changeColor = (e) => {
-    if (lock === false) {
-      e.target.classList.add("selected");
-    }
-  };
-
-  //Quita el color de la opción seleccionada
-  const deselectOption = () => {
-    const selectedOption = document.querySelector(".selected");
-    if (selectedOption) {
-      selectedOption.classList.remove("selected");
-    }
-  };
-
   return (
     <div className="container">
       <h1>Harry Quiz</h1>
@@ -72,14 +77,15 @@ const Quiz = () => {
             <li
               onClick={(e) => {
                 changeColor(e);
-                funcionesPuntos[index](
-                  1,
+                distributePoints(
+                  index,
+                  1,// Opción seleccionada
+                  lock,
+                  setLock,
                   setRav,
                   setSly,
                   setGri,
-                  setHuf,
-                  lock,
-                  setLock
+                  setHuf
                 );
               }}
             >
@@ -88,14 +94,15 @@ const Quiz = () => {
             <li
               onClick={(e) => {
                 changeColor(e);
-                funcionesPuntos[index](
-                  2,
+                distributePoints(
+                  index,
+                  2,// Opción seleccionada
+                  lock,
+                  setLock,
                   setRav,
                   setSly,
                   setGri,
-                  setHuf,
-                  lock,
-                  setLock
+                  setHuf
                 );
               }}
             >
@@ -104,14 +111,15 @@ const Quiz = () => {
             <li
               onClick={(e) => {
                 changeColor(e);
-                funcionesPuntos[index](
-                  3,
+                distributePoints(
+                  index,
+                  3,// Opción seleccionada
+                  lock,
+                  setLock,
                   setRav,
                   setSly,
                   setGri,
-                  setHuf,
-                  lock,
-                  setLock
+                  setHuf
                 );
               }}
             >
@@ -120,14 +128,15 @@ const Quiz = () => {
             <li
               onClick={(e) => {
                 changeColor(e);
-                funcionesPuntos[index](
-                  4,
+                distributePoints(
+                  index,
+                  4,// Opción seleccionada
+                  lock,
+                  setLock,
                   setRav,
                   setSly,
                   setGri,
-                  setHuf,
-                  lock,
-                  setLock
+                  setHuf
                 );
               }}
             >

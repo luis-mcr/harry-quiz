@@ -19,7 +19,8 @@ Este proyecto está creado con Vite. Usando la opción React (JavaScript) + SWC.
 
 Versión 📋
 
-V 1.3 - 
+V 1.4 - 
+Incluye estilos para dispositivos pequeños.
 
 A partir de la V1.0 son todas versiones funcionales del proyecto.
 

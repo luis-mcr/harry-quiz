@@ -27,6 +27,7 @@
     align-items: center;
     height: 70px;
     padding-left: 15px;
+    padding-right: 15px;
     border: 1px solid #686868;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -54,4 +55,22 @@
 .selected {
     background: #dffff2;
     border-color: #00d397;
+}
+
+/* For medium devices */
+@media screen and (max-width: 576px) {
+    .container {
+        width: 94%;
+        padding: 20px 15px;
+    }
+
+    .container ul li {
+        height: 78px;
+        font-size: 16px;
+    }
+
+    .container h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
 }
